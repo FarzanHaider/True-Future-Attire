@@ -10,20 +10,22 @@ const categories = [
 
 export const CategoryBar = () => {
   return (
-    <div className="border-b w-auto sm:w-auto mx-auto bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container sm:w-auto w-auto mx-auto px-4">
-        <nav className="flex items-center justify-center gap-8 py-4">
-          {categories.map((category) => (
-            <Link
-              key={category}
-              to={`/category/${category.toLowerCase().replace(' ', '-')}`}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              {category}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </div>
+    <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div className="container mx-auto px-4">
+    {/* Responsive scroll container */}
+    <nav className="flex justify-center gap-6 py-4 overflow-x-auto no-scrollbar">
+      {categories.map((category) => (
+        <Link
+          key={category}
+          to={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+          className="flex-shrink-0 text-sm font-medium transition-colors hover:text-primary whitespace-nowrap"
+        >
+          {category}
+        </Link>
+      ))}
+    </nav>
+  </div>
+</div>
+
   );
 };
