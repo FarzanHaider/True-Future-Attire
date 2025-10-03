@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const categories = [
-  'New Arrivals',
+  'All',
   'Knitwear',
   'Bottoms',
   'Accessories',
